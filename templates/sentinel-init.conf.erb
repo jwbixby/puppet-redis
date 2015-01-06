@@ -11,4 +11,4 @@ pre-start script
 mkdir -p /var/run/redis-sentinel
 chown redis:redis /var/run/redis-sentinel
 end script
-exec start-stop-daemon --start --chuid redis:redis --pidfile <%= @conf_pidfile_real %> --umask 007 --exec /usr/bin/redis-sentinel -- <%= @conf_sentinel %>
+exec start-stop-daemon --start --chuid redis:redis --pidfile <%= @conf_pidfile_real %> --umask 007 --exec /usr/bin/redis-server -- <%= @conf_sentinel %> --sentinel
